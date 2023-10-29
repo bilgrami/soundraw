@@ -59,7 +59,7 @@ Elegant,Lofi Hip Hop,Wedding & Romance,normal,normal,Medium
 bash
 ```
 chmod +x generate.sh
-./generate.sh custom_soundraw_params 5 30
+./generate.sh ./soundraw_params_samina.csv 5 30
 ```
 
 ### Running the Script with Default Values
