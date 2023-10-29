@@ -70,7 +70,7 @@ chmod +x generate.sh
 
 ```
 
-## Error handlig
+## Error handling
 In cases where an invalid parameter is supplied, the Soundraw.io API will return the following error:
 
 ```json
@@ -79,7 +79,7 @@ In cases where an invalid parameter is supplied, the Soundraw.io API will return
 }
 ```
 
-To assist with troubleshooting, parameters that result in errors are stored in the output/$today/errors directory. The corresponding error file will be named according to the pattern "$today_ts-$param_file_name-errors.csv".
+To assist with troubleshooting, parameters that result in errors are stored in the output/$today/errors directory. The corresponding error file will be named according to the pattern "$today_ts-$param_file_name-errors.csv". See screenshot section for details.
 
 This setup ensures that you can easily locate and review any parameters that did not yield the expected results, facilitating a smoother and more efficient error-handling process.
 
