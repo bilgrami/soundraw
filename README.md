@@ -1,10 +1,10 @@
-# AI Music Generation via soundraw
+# AI Music Generation via soundraw.io
 Generate music based on metadata using Soundraw's API and this Bash script. 
 It processes a CSV file containing music metadata, sends API requests to Soundraw, and downloads the generated music files in .m4a format.
 
-Special thanks for soundraw.io team for making such a great and easy to use API.
+Special thanks to the soundraw.io team for creating such a fantastic and user-friendly API.
 
-For more information, refer to the Soundraw API documentation:
+For more information, refer to the soundraw.io API documentation:
 
 - [POWERFUL AI MUSIC TOOL FOR DEVELOPERS](https://discover.soundraw.io/api)
 - [API doc](https://docs.google.com/document/d/185WjC7T1Rq1-9zKlARobmeFiR3VaJcN1IT4ZwDP03Tg/edit#heading=h.3pt5vjbx3xdc)
@@ -33,7 +33,7 @@ export URL=https://soundraw.io/api/v2/musics/compose
 export AUTH_TOKEN='your_soundraw_auth_token'
 ```
 
-Replace 'your_soundraw_auth_token' with your actual Soundraw auth token.
+Replace 'your_soundraw_auth_token' with your actual soundraw.io API auth token.
 
 ### generate.sh File
 
@@ -70,6 +70,19 @@ chmod +x generate.sh
 
 ```
 
+## Error handlig
+In cases where an invalid parameter is supplied, the Soundraw.io API will return the following error:
+
+```json
+{
+    "error":"No music available. Try choosing different parameters."
+}
+```
+
+To assist with troubleshooting, parameters that result in errors are stored in the output/$today/errors directory. The corresponding error file will be named according to the pattern "$today_ts-$param_file_name-errors.csv".
+
+This setup ensures that you can easily locate and review any parameters that did not yield the expected results, facilitating a smoother and more efficient error-handling process.
+
 ## Sample Music output 
 
 ### Listen to the Music file
@@ -101,17 +114,21 @@ Check the output directories (output/$today/music, output/$today/response, outpu
 
 ## Screeshots 
 
-### Sample Run Output
+### Sample Execution Output
 
 ![sample run output](./doc/output-example.png "Example output")
 
-### Sample Output Folder
+### Music Output Folder
 
-![Sample output folder](./doc/generated_output_folder.png "output folder")
+![Sample Music output folder](./doc/generated_output_folder.png "Music output folder")
+
+### Error response
+
+![Sample Error response](./doc/errors-output-example.png "output folder")
 
 ---
 
-## Soundraw API Reference
+## soundraw.io Params
 
 As of October 5th, 2023, the available values for moods, themes, genres, and energy levels are:
 
@@ -186,7 +203,7 @@ For inquiries, suggestions, or bug reports, contact us at:
 
 🎶 **Stay Tuned with saMas Music!** 🎶
 
-If you're intrigued by the music generated via Soundraw and wish to explore more, make sure to check out our [YouTube channel](https://www.youtube.com/@samasmusic)! 🎥
+If you're intrigued by the music generated via soundraw.io and wish to explore more, make sure to check out our [YouTube channel](https://www.youtube.com/@samasmusic)! 🎥
 
 [🔔 Subscribe Now](https://www.youtube.com/@samasmusic?sub_confirmation=1) and hit the like button to stay updated with our latest musical creations. Your support helps us keep the rhythm alive and continue creating amazing content for you! 💃🕺
 
